@@ -37,6 +37,9 @@ void countingSort(unsigned int length, unsigned int value)
         countingArray[unorderedNumbers[j]]--; //subtraio um de cada indice que eu ordenar
     }
     
+    free(unorderedNumbers);
+    free(orderedNumbers);
+    free(countingArray);
 
     //printArray(orderedNumbers, length); //exibo o array ordenado
     //abraços jobson <3
