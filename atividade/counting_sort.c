@@ -5,10 +5,10 @@
 
 void countingSort(unsigned int length, unsigned int value)
 {
-    int unorderedNumbers[length]; //array desordenado
+    int *unorderedNumbers = (int *)malloc(length * sizeof(int)); //array desordenado
     generateArrayValues(unorderedNumbers, length, value); //aqui estou usando uma função para gerar seus valores aleatorios
     int maxValue = knowMaxValue(unorderedNumbers, length) + 1; //estou encontrando o maior valor dentro desse array e somando mais um
-    int countingArray[maxValue]; //crio um array de contagem com o tamanho que encontrei anteriormente
+    int *countingArray = (int *)malloc(maxValue * sizeof(int)); //crio um array de contagem com o tamanho que encontrei anteriormente
     initializeArray(countingArray, maxValue);
 
     for (unsigned int j = 0; j < length; j++) //irei enumerar o array de contagem, somando 1 em cada indice, isso indica quantos daquele valor eu tneho no array original
@@ -22,7 +22,7 @@ void countingSort(unsigned int length, unsigned int value)
     //printArray(countingArray, maxValue); //exibo o array de contagem
     //printf("\n\n");
 
-    int orderedNumbers[length]; //crio o array ordenado
+    int *orderedNumbers = (int *)malloc(length * sizeof(int)); //crio o array ordenado
     plusArrayIndexes(countingArray, maxValue); //soma os indices do array i com i+1, para manter a originalidade do array inicial
     for (unsigned int j = 0; j < maxValue; j++) //subtraio um de cada no array de contangem
     {

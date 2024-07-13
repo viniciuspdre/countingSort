@@ -13,8 +13,8 @@ int main(int argc, char argv[]){
         countingSort(input[i],1000);
         end = clock();
 
-        time_spent = ((double)(end-begin)); //clocks_per_sec
-        printf("Tamanho da entrada: %7d Tempo de execucao: %20.6f segundos\n", input[i], time_spent);
+        time_spent = ((double)(end-begin))/CLOCKS_PER_SEC; //clocks_per_sec
+        printf("Tamanho da entrada: %7d | Tempo de execucao: %20.6f segundos\n", input[i], time_spent);
     }
     
 }
